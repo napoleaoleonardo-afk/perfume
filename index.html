@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastro Olfativo | O Guia do Perfume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Rastro Olfativo</h1>
+    <p>Descubra a arte, a ciência e a fragrância perfeita para você.</p>
+  </header>
+
+  <main class="container">
+    <!-- Seção Pirâmide Olfativa -->
+    <section class="card">
+      <h2>Explorador de Pirâmide Olfativa</h2>
+      <p>Clique em cada camada para entender como o perfume evolui na pele ao longo do tempo:</p>
+      
+      <div class="pyramid">
+        <div class="layer top-note" onclick="showNote('top')">
+          <span>Notas de Topo (Saída)</span>
+        </div>
+        <div class="layer heart-note" onclick="showNote('heart')">
+          <span>Notas de Coração (Corpo)</span>
+        </div>
+        <div class="layer base-note" onclick="showNote('base')">
+          <span>Notas de Fundo (Base)</span>
+        </div>
+      </div>
+
+      <div id="note-detail" class="detail-box">
+        Clique em uma das camadas acima para ver os detalhes.
+      </div>
+    </section>
+
+    <!-- Seção Quiz -->
+    <section class="card">
+      <h2>Descubra sua Família Olfativa</h2>
+      <form id="quiz-form">
+        <label>1. Para qual ocasião você procura um perfume?</label>
+        <select id="occasion" required>
+          <option value="">Selecione...</option>
+          <option value="daily">Dia a dia / Trabalho</option>
+          <option value="night">Eventos Noturnos</option>
+          <option value="hot">Dias Quentes / Esporte</option>
+        </select>
+
+        <label>2. Que tipo de sensação você prefere?</label>
+        <select id="sensation" required>
+          <option value="">Selecione...</option>
+          <option value="fresh">Sensação de frescor e limpeza</option>
+          <option value="warm">Sensação marcante e acolhedora</option>
+          <option value="sweet">Sensação doce e marcante</option>
+        </select>
+
+        <button type="button" onclick="calculatePerfume()">Encontrar Fragrância</button>
+      </form>
+
+      <div id="quiz-result" class="result-box hidden"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
